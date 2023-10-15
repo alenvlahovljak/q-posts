@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  rootDir: path.resolve(__dirname, '.'),
+  rootDir: path.resolve(__dirname, '../'),
   testEnvironment: 'jsdom',
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': [
@@ -11,10 +11,13 @@ module.exports = {
       }
     ]
   },
-  testMatch: ['**/__tests__/*.{,test}.{ts,tsx}'],
+  testMatch: ['<rootDir>/src/**/__tests__/*.{,test}.{ts,tsx}'],
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/'],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1'
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+      '<rootDir>/jest/__mocks__/fileMock.js',
+    '\\.(css|less)$': '<rootDir>/jest/__mocks__/styleMock.js'
   },
   automock: false,
   clearMocks: true,
@@ -22,10 +25,10 @@ module.exports = {
   coverageDirectory: 'coverage',
   coverageReporters: ['html', 'text'],
   coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
-  setupFilesAfterEnv: ['./jest.setup.cjs'],
+  setupFilesAfterEnv: ['./jest/jest.setup.js'],
   globals: {
     NODE_ENV: 'test'
   },
   moduleDirectories: ['node_modules'],
-  moduleFileExtensions: ['js', 'ts', 'node']
+  moduleFileExtensions: ['tsx', 'js', 'ts', 'node']
 };
