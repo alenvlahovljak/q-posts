@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json.schemastore.org/solidaritySchema",
+  "requirements": {
+    "NPM": [
+      {
+        "rule": "cli",
+        "binary": "npm",
+        "semver": "^9.5.1",
+        "version": "--version",
+        "error": "You have npm@{{installedVersion}}, and need npm@{{wantedVersion}}. Fix with `npm install -g npm@{{wantedVersion}}`"
+      }
+    ],
+    "Node": [
+      {
+        "rule": "cli",
+        "binary": "node",
+        "semver": "^18.16.0",
+        "version": "--version",
+        "error": "You have node@{{installedVersion}}, and need node@{{wantedVersion}}. Go to https://nodejs.org/ to update`"
+      }
+    ],
+    "Package.json": [{"rule": "file", "location": "./package.json"}],
+    "Development Configuration": [
+      {
+        "rule": "file",
+        "location": ".env",
+        "error": "You are missing environment variables"
+      }
+    ]
+  }
+}
