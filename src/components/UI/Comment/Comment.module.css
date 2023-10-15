@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  column-gap: 8px;
+}
+
+.container__avatar {
+  border-radius: 50%;
+  background-position: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.container__avatar:hover {
+  filter: grayscale(60%);
+}
+
+.container__comment {
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+  margin-bottom: 12px;
+  background: #364547;
+  padding: 8px 12px;
+  border-radius: 0 var(--border-radius) var(--border-radius) var(--border-radius);
+}
+
+.comment__name {
+  color: white;
+  font-weight: bold;
+}

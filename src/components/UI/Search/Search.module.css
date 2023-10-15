@@ -1,0 +1,16 @@
+.container > input {
+  width: 100%;
+  border: 0;
+  background: #38434f;
+  padding: 12px 8px;
+  color: white;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.container > input[type='search']::-webkit-search-decoration,
+.container > input[type='search']::-webkit-search-cancel-button,
+.container > input[type='search']::-webkit-search-results-button,
+.container > input[type='search']::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}

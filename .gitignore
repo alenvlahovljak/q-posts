@@ -8,7 +8,7 @@
 .pnp.js
 
 # testing
-jest/coverage
+coverage
 
 # production
 /dist

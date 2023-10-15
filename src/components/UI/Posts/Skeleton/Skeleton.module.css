@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  row-gap: 16px;
+}
+
+.container__title {
+  font-size: 20px;
+}
+
+.container__button {
+  border: 2px solid white;
+  border-radius: 3px;
+  color: white;
+  padding: 12px 8px;
+  background-color: transparent;
+}
+
+.container__button:hover {
+  cursor: pointer;
+  background-color: #4b4a4a;
+}

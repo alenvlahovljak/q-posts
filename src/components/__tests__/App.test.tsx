@@ -1,8 +1,14 @@
-import { render, screen } from '@testing-library/react';
-import App from '../../App';
+import { render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 
-it('should have "Hello World!" text', () => {
-  render(<App />);
+import App from '@/App';
 
-  expect(screen.getByText('Hello World!')).toBeInTheDocument();
+describe('App Component', () => {
+  it('should render without crashing', () => {
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+  });
 });
